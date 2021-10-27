@@ -155,7 +155,7 @@ body{
 .cart-container{
     width:100%;
     height:100%;
-    z-index:100;
+    z-index:250;
     position:fixed;
     top:0;
     right:-100%;
@@ -316,13 +316,14 @@ body{
     display:flex;
     justify-content:space-evenly;
     position:relative;
+    
 }
 .about-us::after{
     content:"";
     position:absolute;
     width: 100%;
     height: 100%;
-    background-color:rgba(0, 0, 0, 0.089);
+    background-color:rgba(0, 0, 0, 0.377);
     top: 0;
     left:0;
 }
@@ -333,6 +334,8 @@ body{
     flex-direction:column;
     justify-content:center;
     position:relative;
+    z-index:10;
+    color:white;
 }
 
 .title-one{
@@ -340,7 +343,7 @@ body{
     top: 20%;
     left: 18%;
     font-size:24px;
-    color:#cca665;
+    color:#dac298;
 }
 .about-market h1{
     position:absolute;
@@ -362,6 +365,8 @@ body{
     justify-content:center;
     padding:20px;
     background-color:rgba(250, 235, 215, 0.144);
+    z-index:10;
+    color:white;
 }
 .group-service{
     display:flex;
@@ -380,7 +385,7 @@ body{
 .service h5{
     font-size:20px;
     font-weight: 700;
-    color:#c0aa83;
+    color:#d1bfa1;
     margin-bottom:10px;
     text-shadow:1px 1px 1px #000;
 }
@@ -881,4 +886,296 @@ background-color:rgba(0, 0, 0, 0.781);
     height:10%;
     background-color:#2424244d;
     color:white;
+}
+.hamburger{
+    display:none;
+}
+.close{
+    display:none;
+}
+@media screen and (max-width: 1030px){
+.navigation{
+    width:50%;
+    height:100vh;
+    flex-direction:column;
+    background-color:#242424;
+    justify-content:center;
+    z-index:200;
+    position:fixed;
+    top:0;
+    left:-100%;
+    transition:left .3s ease-in-out;
+}
+.hamburger{
+    color:white;
+    display:block;
+    position:absolute;
+    top: 6%;
+    right: 7%;
+    font-size:24px;
+    opacity:1;
+    transition:opacity .3s ease-in-out;
+}
+.hamburgerClose{
+opacity:0;
+}
+.close{
+ 
+    position:absolute;
+    top: 4%;
+    right:7%;
+    width:40px;
+    height:40px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    color:white;
+    border:none;
+    font-size:24px;
+    transition:color .2s ease-in-out, border .2s ease-in-out;
+    
+}
+.close:hover{
+    color:#cca665;
+    border-radius:50%;
+    border:2px solid #cca665;
+}
+.showNav{
+    left:0;
+}
+.nav-element{
+    margin-bottom:20px;
+    font-size:24px;
+}
+.cart{
+    width:auto;
+}
+.cart .count{
+    width: 30px;
+    height: 30px;
+}
+footer{
+    height:100%;
+}
+.explore-elem{
+    font-size:15px;
+}
+}
+
+@media screen and (max-width:576px){
+    .product-content .remove{
+        width:100%;
+    }
+    .cart-content h1{
+        width:100%;
+        text-align: center;
+       top:7%;
+       left:0;
+    }
+    .close-btn i {
+        font-size: 31px;
+    }
+    .nav{
+        height:6rem;
+    }
+    .container-home{
+        height:calc(100vh - 6rem);
+    }
+    .hamburger{
+        top: 5%;
+    }
+    .logo {
+        width:50%;
+    }
+    .navigation{
+        width: 100%;
+    }
+    .home, .about-us, .products, .gallery, .contact{
+        height:100%;
+    }
+    .title-home{
+        font-size:4rem;
+    }
+    .container-home a{
+        font-size: 15px;
+        padding:15px;
+        margin-top:20px;
+    }
+    .about-us{
+        flex-direction:column;
+       padding:20px;
+    }
+    .text{
+        font-size:15px;
+        margin-left:0;
+        padding:10px;
+    }
+    .about-market, .services{
+        width:100%;
+    }
+    .about-market h1, .title-one{
+        position:relative;
+        left:0;
+    }
+    .title-one{
+        font-size:22px;
+        text-align: center;
+    }
+    .group-service, .service{
+        margin-left:0;
+    }
+    .service h5{
+        font-size:17px;
+    }
+    .about-market h1{
+        font-size:30px;
+        text-align: center;
+    }
+    .group-service{
+        margin-top:10px;
+    }
+    #products h1{
+        font-size:60px;
+    }
+    .products h2{
+        font-size:27px;
+        top:2%;
+    }
+    .products h4{
+        font-size:20px;
+        top:3%;
+    }
+    .products-container{
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        margin-top:20px;
+    }
+    .products-container .card{
+        width:90%;
+    }
+
+    .gallery-title{
+        font-size:80px;
+    }
+    .gallery-title h2{
+        font-size:30px;
+    }
+    .gallery-content{
+        flex-direction:column;
+        align-items:center;
+    }
+    .gallery-content .element-group{
+        width:90%;
+    }
+
+    .contact-container{
+        flex-direction:column;
+    }
+    .details, .timetable, .form-contact{
+        width:100%;
+        margin-top:10px;
+    }
+    .details{
+        margin-left:0;
+        font-size:15px;
+        padding:10px;
+    }
+    .name, .email, .textarea{
+        font-size:14px;
+    }
+    footer{
+        height:100%;
+    }
+    .footer-content{
+        flex-direction:column;
+        width:100%;
+    }
+    .footer-content .footer-logo, .explore, .contact-us{
+        width:100%;
+    }
+    .footer-logo{
+        margin-bottom:10px;
+    }
+    .logo-img{
+        width:100%;
+    }
+    .explore, .contact-us{
+        padding-left:0;
+        margin-bottom:10px;
+    }
+    .explore-list{
+        flex-direction: column;
+        margin-top:10px;
+    }
+    .contact-elem{
+    font-size:16px;
+    }
+    .explore h3, .contact-us h3{
+        font-size:25px;
+    }
+}
+
+@media screen and (max-width:992px){
+    .navigation{
+        min-width: 70%;
+    }
+    
+    .title-home{
+        font-size:80px;
+        width:auto;
+    }
+    .container-home a{
+        font-size:17px;
+        padding:15px;
+    }
+    .card{
+        width: 40%;
+    }
+    .element-group{
+        width: 46%;
+    }
+    .contact-container{
+        flex-wrap:wrap;
+
+    }
+    .container-products{
+        margin-top:100px;
+    }
+    .products h1{
+        font-size: 120px;
+    }
+    .details, .timetable, .form-contact{
+        width: 80%;
+        margin:5px auto;
+
+    }
+    .footer-content{
+        flex-direction:column;
+    }
+    .footer-content .footer-logo, .explore, .contact-us{
+        width:100%;
+    }
+    .footer-logo{
+        justify-content:center;
+        align-items:center;
+    }
+    .explore{
+        align-items: center;
+        justify-content:center;
+    }
+    .explore , .contact-us{
+        padding-left:0;
+    }
+    .explore h3, .contact-us h3{
+      align-self: center;
+    }
+    .explore-list, .contact-group{
+       justify-content:center;
+       margin-top:20px;
+       
+    }
+    .explore-elem{
+        font-size:18px;
+    }
 }

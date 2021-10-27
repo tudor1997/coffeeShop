@@ -10,6 +10,10 @@ const containerProducts = document.querySelector('.products-container');
 const cartTotal = document.querySelector('.cartTotal');
 const cartContent = document.querySelector('.cart-products-container');
 const clearCart = document.querySelector('.clearCart');
+const navElements = document.querySelectorAll('.nav-element');
+const navigation = document.querySelector('.navigation');
+const openNavBtn = document.querySelector('.hamburger');
+const closeNavBtn = document.querySelector('.close')
 
 
 const productsAPI = "http://127.0.0.1:8000/products/";
@@ -149,7 +153,24 @@ closeCart(){
     cartOverlay.classList.add('showOverlay');
     
  }
-
+openNav(){
+    openNavBtn.addEventListener("click",() =>{
+        navigation.classList.add('showNav');
+        openNavBtn.classList.add('hamburgerClose')
+    })
+}
+closeNav(){
+    navElements.forEach(item => {
+        item.addEventListener('click', () => {
+            navigation.classList.remove('showNav');
+            openNavBtn.classList.remove('hamburgerClose')
+        })
+    })
+    closeNavBtn.addEventListener("click",() =>{
+        navigation.classList.remove('showNav');
+        openNavBtn.classList.remove('hamburgerClose');
+    })
+}
  scrollToTop(){
         window.scroll({
             top: 0,
@@ -169,6 +190,8 @@ closeCart(){
     });
  }
  setupAPP(){
+    this.openNav();
+    this.closeNav();
     this.showCart();
     this.closeCart();
     cartBtn.addEventListener('click',this.showCart);
